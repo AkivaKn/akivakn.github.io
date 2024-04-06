@@ -3,7 +3,13 @@ let resultDisplay = false;
 
 function appendToDisplay(value) {
   if (currentDisplay === "0" || resultDisplay) {
-    if (value === "+" || value === "-" || value === "*" || value === ".") {
+    if (
+      value === "+" ||
+      value === "-" ||
+      value === "×" ||
+      value === "." ||
+      value === "÷"
+    ) {
       currentDisplay += value;
     } else {
       currentDisplay = value;
@@ -17,26 +23,38 @@ function appendToDisplay(value) {
 
 function updateDisplay() {
   const displayElement = document.getElementById("display");
-  displayElement.textContent = currentDisplay;
+  if (/[÷×\-+]/.test(currentDisplay.slice(-1)) || resultDisplay) {
+    displayElement.textContent = currentDisplay;
+  } else {
+    const displayToEval = currentDisplay.replace(/\÷|\×/, (char) => {
+      if (char === "÷") {
+        return "/";
+      } else {
+        return "*";
+      }
+    });
+    const result = eval(displayToEval);
+    displayElement.innerHTML = currentDisplay + "<br>" + result.toString();
+  }
 }
 
 function calculateResult() {
-    const displayToEval = currentDisplay.replace(/\÷|\×/, (char) => {
-        if (char === '÷') {
-            return '/';
-        } else {
-            return '*'
-        }
-    })
+  const displayToEval = currentDisplay.replace(/\÷|\×/, (char) => {
+    if (char === "÷") {
+      return "/";
+    } else {
+      return "*";
+    }
+  });
   try {
     const result = eval(displayToEval);
-    currentDisplay += "\n=" + result.toString();
+    currentDisplay = result.toString();
+    resultDisplay = true;
     updateDisplay();
   } catch (err) {
     currentDisplay += "\nError";
     updateDisplay();
   }
-  resultDisplay = true;
 }
 
 function clearLastElement() {
@@ -53,5 +71,3 @@ function clearDisplay() {
   updateDisplay();
 }
 
-window.addEventListener("resize", handleOverflow);
-handleOverflow();
