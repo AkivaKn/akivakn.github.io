@@ -23,7 +23,7 @@ function appendToDisplay(value) {
 
 function updateDisplay() {
   const displayElement = document.getElementById("display");
-  if (/[÷×\-+]/.test(currentDisplay.slice(-1)) || resultDisplay) {
+  if (/[÷×\-+]/.test(currentDisplay.slice(-1)) || resultDisplay || !/[÷×\-+]/.test(currentDisplay)) {
     displayElement.textContent = currentDisplay;
   } else {
     const displayToEval = currentDisplay.replace(/\÷|\×/, (char) => {
