@@ -4,33 +4,73 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js"></script>
   </head>
   <body>
-    <div class="calculator">
-      <div class="display" id="display">0</div>
-      <div class="buttons">
-        <button onclick="appendToDisplay('(')">(</button>
-        <button onclick="appendToDisplay(')')">)</button>
-        <button onclick="clearLastElement()">CE</button>
-        <button onclick="clearDisplay()">C</button>
-        <button onclick="appendToDisplay('7')">7</button>
-        <button onclick="appendToDisplay('8')">8</button>
-        <button onclick="appendToDisplay('9')">9</button>
-        <button onclick="appendToDisplay('÷')">÷</button>
-        <button onclick="appendToDisplay('4')">4</button>
-        <button onclick="appendToDisplay('5')">5</button>
-        <button onclick="appendToDisplay('6')">6</button>
-        <button onclick="appendToDisplay('×')">×</button>
-        <button onclick="appendToDisplay('1')">1</button>
-        <button onclick="appendToDisplay('2')">2</button>
-        <button onclick="appendToDisplay('3')">3</button>
-        <button onclick="appendToDisplay('-')">-</button>
-        <button onclick="appendToDisplay('0')">0</button>
-        <button onclick="appendToDisplay('.')">.</button>
-        <button onclick="calculateResult()">=</button>
-        <button onclick="appendToDisplay('+')">+</button>
+    <div class="calculator grid-container-one">
+      <div class="display grid-one-item-one" id="display">0</div>
+      <div class="buttons grid-one-item-two grid-container-two">
+        <div class="grid-two-item-one">
+          <button onclick="appendToDisplay('(')">(</button>
+        </div>
+        <div class="grid-two-item-two">
+          <button onclick="appendToDisplay(')')">)</button>
+        </div>
+        <div class="grid-two-item-three">
+          <button onclick="clearLastElement()">CE</button>
+        </div>
+        <div class="grid-two-item-four">
+          <button onclick="clearDisplay()">C</button>
+        </div>
+        <div class="grid-two-item-five">
+          <button onclick="appendToDisplay('7')">7</button>
+        </div>
+        <div class="grid-two-item-six">
+          <button onclick="appendToDisplay('8')">8</button>
+        </div>
+        <div class="grid-two-item-seven">
+          <button onclick="appendToDisplay('9')">9</button>
+        </div>
+        <div class="grid-two-item-eight">
+          <button onclick="appendToDisplay('÷')">÷</button>
+        </div>
+        <div class="grid-two-item-nine">
+          <button onclick="appendToDisplay('4')">4</button>
+        </div>
+        <div class="grid-two-item-ten">
+          <button onclick="appendToDisplay('5')">5</button>
+        </div>
+        <div class="grid-two-item-elven">
+          <button onclick="appendToDisplay('6')">6</button>
+        </div>
+        <div class="grid-two-item-twelve">
+          <button onclick="appendToDisplay('×')">×</button>
+        </div>
+        <div class="grid-two-item-thirteen">
+          <button onclick="appendToDisplay('1')">1</button>
+        </div>
+        <div class="grid-two-item-fourteen">
+          <button onclick="appendToDisplay('2')">2</button>
+        </div>
+        <div class="grid-two-item-fifteen">
+          <button onclick="appendToDisplay('3')">3</button>
+        </div>
+        <div class="grid-two-item-sixteen">
+          <button onclick="appendToDisplay('-')">-</button>
+        </div>
+        <div class="grid-two-item-seventeen">
+          <button onclick="appendToDisplay('0')">0</button>
+        </div>
+        <div class="grid-two-item-eighteen">
+          <button onclick="appendToDisplay('.')">.</button>
+        </div>
+        <div class="grid-two-item-nineteen">
+          <button onclick="calculateResult()">=</button>
+        </div>
+        <div class="grid-two-item-twenty">
+          <button onclick="appendToDisplay('+')">+</button>
+        </div>
       </div>
     </div>
   </body>

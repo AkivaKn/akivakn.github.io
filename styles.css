@@ -9,33 +9,60 @@
 
 .display {
     height: 60px;
-    font-size: 24px;
+    font-size: 50px;
     text-align: right;
     padding: 5px;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     margin-bottom: 10px;
     overflow: auto;
 }
 
-.buttons {
-    display:grid;
-    grid-template-columns: repeat(4,3fr);
-    gap: 5px;
-}
+    
 
 button {
-    height: 80px;
+    height: 100%;
     width: 70px;
     font-size: 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     background-color: #f1f1f1;
 }
 
 button:hover {
     background-color: #e1e1e1;
+}
+
+.grid-container-one {
+    display: grid;
+    height: 500px;
+    grid-template-columns: 100%;
+    grid-template-rows: 40% 60%;
+    background-color: rgb(159, 159, 147);
+    margin-top: 20px ;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+.grid-one-item-one {
+    height: 80%;
+}
+
+.grid-one-item-two {
+    height: 100%;
+    border-top: solid black;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.grid-container-two {
+    display:grid;
+    grid-template-columns: repeat(4,3fr);
+    gap: 5px;
 }
 
