@@ -1,21 +1,26 @@
 let currentDisplay = "0";
 let resultDisplay = false;
+const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 function appendToDisplay(value) {
-  if (currentDisplay === "0" || resultDisplay) {
-    if (
-      value === "+" ||
-      value === "-" ||
-      value === "×" ||
-      value === "." ||
-      value === "÷"
-    ) {
+  if (
+    value === "+" ||
+    value === "-" ||
+    value === "×" ||
+    value === "." ||
+    value === "÷"
+  ) {
+    if (numbers.includes(currentDisplay.slice(-1))) {
       currentDisplay += value;
     } else {
-      currentDisplay = value;
+      currentDisplay = currentDisplay.slice(0, -1) + value;
     }
   } else {
-    currentDisplay += value;
+    if (currentDisplay === "0" || resultDisplay) {
+      currentDisplay = value;
+    } else {
+      currentDisplay += value;
+    }
   }
   resultDisplay = false;
   updateDisplay();
@@ -23,10 +28,14 @@ function appendToDisplay(value) {
 
 function updateDisplay() {
   const displayElement = document.getElementById("display");
-  if (/[÷×\-+]/.test(currentDisplay.slice(-1)) || resultDisplay || !/[÷×\-+]/.test(currentDisplay)) {
+  if (
+    /[÷×\-+]/.test(currentDisplay.slice(-1)) ||
+    resultDisplay ||
+    !/[÷×\-+]/.test(currentDisplay)
+  ) {
     displayElement.textContent = currentDisplay;
   } else {
-    const displayToEval = currentDisplay.replace(/\÷|\×/, (char) => {
+    const displayToEval = currentDisplay.replace(/\÷|\×/g, (char) => {
       if (char === "÷") {
         return "/";
       } else {
@@ -70,4 +79,3 @@ function clearDisplay() {
   resultDisplay = false;
   updateDisplay();
 }
-
