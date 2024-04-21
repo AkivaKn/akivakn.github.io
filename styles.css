@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Jersey+20&family=Micro+5+Charted&display=swap");
 
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 .calculator {
   width: 300px;
   border: 1px solid #ccc;
@@ -7,6 +12,13 @@
   background-color: #fff;
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 400px) {
+  .calculator{
+    width: 98vw;
+    height: 100vh;
+  }
 }
 
 .display {
@@ -57,10 +69,7 @@ button:hover {
   grid-template-columns: 100%;
   grid-template-rows: 40% 55%;
   background-color: #f2ecf7;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: auto;
+  margin: auto;
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 30px;
