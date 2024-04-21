@@ -6,7 +6,7 @@
   padding: 0;
 }
 .calculator {
-  width: 300px;
+  width: 350px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
@@ -46,7 +46,6 @@ button {
 
 button:hover {
   background-color: #fb761f;
-
   animation-name: bounce;
   animation-timing-function: ease;
 }
